@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MatiereRepository")
- * @ApiResource(normalizationContext={"groups"={"mat"}})
+ * @ApiResource(normalizationContext={"groups"={"mat"}},)
  */
 class Matiere
 {
@@ -20,16 +20,13 @@ class Matiere
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups({"prof"})
-     * @Groups({"mat"})
+     * @Groups({"prof","mat","note"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"prof"})
-     * @Groups({"mat"})
-     * @Groups({"note"})
+     * @Groups({"prof","mat","note"})
      */
     private $libelle;
 
@@ -37,22 +34,20 @@ class Matiere
 
     /**
      * @ORM\Column(type="integer")
-     * @Groups({"prof"})
-     * @Groups({"mat"})
-     * @Groups({"note"})
+     * @Groups({"prof","mat","note"})
      */
     private $coef;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Professeur", mappedBy="mats")
-     * @Groups({"mat"})
+     * @Groups({"mat","note"})
      */
     private $professeurs;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Note", mappedBy="matieres")
-     * @Groups({"mat"})
      *  @ORM\JoinTable(name="professeur_matiere")
+     * @Groups({"mat"})
      */
     private $notes;
 

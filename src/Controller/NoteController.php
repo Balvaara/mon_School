@@ -39,14 +39,12 @@ class NoteController extends AbstractController
      */
    public function new(Request $request, SerializerInterface $serializer,EntityManagerInterface $entityManager, ValidatorInterface $validator)
    {
-    // $this-> denyAccessUnlessGranted(['ROLE_SUP_ADMIN','ROLE_ADMIN']);
          //utilisateur qui connecte
          $users= $this->getUser();
 
          $date=new \DateTime();
 
          $note = $serializer->deserialize($request->getContent(), Note::class, 'json');
-        //  $depot = $serializer->deserialize($request->getContent(), Depot::class, 'json');
 
        $val = json_decode($request->getContent());
 
@@ -193,6 +191,7 @@ class NoteController extends AbstractController
                 
                 $repo = $this->getDoctrine()->getRepository(Note::class);
                 $notes = $repo->findAll();
+                
                $generCoef=$this->TotalCoef($matricule,$sem);
 
                $generNP=$this->TotalMoyPart($matricule,$sem);

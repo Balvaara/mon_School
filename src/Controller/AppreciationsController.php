@@ -23,9 +23,9 @@ class AppreciationsController extends AbstractController
         foreach($all as $vals)
         {
             
-            if($vals->getVal() <= $val && $vals->getValSup()>= $val)
+            if($vals->getVal() <= $val && $vals->getValSup() >= $val)
             {
-                
+                // dd($vals);
                 return $this->json($vals); 
             }
         }

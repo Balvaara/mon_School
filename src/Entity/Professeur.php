@@ -21,23 +21,19 @@ class Professeur
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups({"prof"})
-     * @Groups({"mat"})
-     * 
+     * @Groups({"prof","mat"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"prof"})
-     * @Groups({"mat"})
+     * @Groups({"prof","mat"})
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"prof"})
-     * @Groups({"mat"})
+     * @Groups({"prof","mat"})
      */
     private $nom;
     
@@ -46,43 +42,37 @@ class Professeur
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"prof"})
-     * @Groups({"mat"})
+     * @Groups({"prof","mat"})
      */
     private $adressePr;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"prof"})
-     * @Groups({"mat"})
+     * @Groups({"prof","mat"})
      */
     private $telPr;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"prof"})
-     * @Groups({"mat"})
+     * @Groups({"prof","mat"})
      */
     private $matriculeP;
 
     /**
      * @ORM\Column(type="date")
-     * @Groups({"prof"})
-     * @Groups({"mat"})
+     * @Groups({"prof","mat"})
      */
     private $datenessaince;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"prof"})
-     * @Groups({"mat"})
+     * @Groups({"prof","mat"})
      */
     private $lieunessaince;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Matiere", inversedBy="professeurs")
      * @Groups({"prof"})
-     * @Groups({"mat"})
      * @ORM\JoinTable(name="professeur_matiere")
      */
     private $mats;

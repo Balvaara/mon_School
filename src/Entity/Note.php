@@ -21,6 +21,7 @@ class Note
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      * @Groups({"note"})
+     * @Groups({"mat"})
      */
     private $id;
 
@@ -42,12 +43,14 @@ class Note
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"note"})
+     * @Groups({"mat"})
      */
     private $appreciation;
 
     /**
      * @ORM\Column(type="decimal", precision=20, scale=0)
      * @Groups({"note"})
+     * @Groups({"mat"})
      */
     private $valeur;
 

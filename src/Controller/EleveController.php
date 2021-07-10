@@ -59,10 +59,7 @@ class EleveController extends AbstractController
 
         foreach ($Pps as $myparent ) {
             
-          if ($myparent->getPrenomP()==$parrent->getPrenomP()
-          && $myparent->getNomP()==$parrent->getNomP() 
-          && $myparent->getAdresse()==$parrent->getAdresse()
-          && $myparent->getTel()==$parrent->getTel() ) {
+          if ( $myparent->getTel()==$parrent->getTel() ) {
 
             // $EncienParent=$myparent;
         $eleve->setMatricule($Gene.$generer->generer());

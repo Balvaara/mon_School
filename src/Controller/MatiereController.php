@@ -52,7 +52,7 @@ class MatiereController extends AbstractController
     }
 
             /**
-             * @Route("/getMat/{id}",  methods={"GET"})
+             * @Route("/getMat/{id}", name="parId", methods={"GET"})
              */
             public function getById($id, EntityManagerInterface $entityManager)
             {
